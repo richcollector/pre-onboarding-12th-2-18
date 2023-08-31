@@ -1,22 +1,19 @@
-import React from 'react';
+import { Outlet } from 'react-router-dom';
+
 import { INFO } from '../../utils/constants/Info';
 import styles from '../../utils/styles/Layout.module.scss';
 
-type LayoutProps = {
-	children: React.ReactNode;
-};
+function Layout() {
+	const { OWNER, REPO } = INFO;
 
-function Layout({ children }: LayoutProps) {
 	return (
-		<div>
-			<div className={styles.header}>
-				<header>
-					<h1>
-						{INFO.OWNER} / {INFO.REPO}
-					</h1>
-				</header>
-			</div>
-			<main>{children}</main>
+		<div className={styles.header}>
+			<header>
+				<h1>
+					{OWNER} / {REPO}
+				</h1>
+			</header>
+			<Outlet />
 		</div>
 	);
 }
