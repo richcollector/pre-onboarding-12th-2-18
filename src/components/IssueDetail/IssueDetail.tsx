@@ -29,7 +29,7 @@ function IssueDetail() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [issue_number]);
 
-	if (isLoading) return; //로딩spinner 추가
+	if (isLoading) return <></>; //로딩spinner 추가
 
 	return (
 		<>
