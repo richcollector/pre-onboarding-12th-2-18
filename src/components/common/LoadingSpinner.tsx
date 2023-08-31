@@ -1,8 +1,8 @@
 import styles from '../../utils/styles/LoadingSpinner.module.scss';
 
-function LoadingSpinner() {
+function LoadingSpinner({ scroll }: { scroll?: boolean }) {
 	return (
-		<div className={styles.loadingContainer}>
+		<div className={`${!scroll && styles.loadingContainer}`}>
 			<div className={styles.loading}>
 				<div></div>
 				<div></div>
