@@ -1,5 +1,4 @@
-import React from 'react';
-
+import IssueList from '../../components/IssueList/IssueLIst';
 export default function index() {
-	return <div>index</div>;
+	return <IssueList />;
 }
