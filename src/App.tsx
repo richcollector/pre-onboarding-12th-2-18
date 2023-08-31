@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { ROUTES } from './utils/constants/Routes';
+import './utils/styles/Common.scss';
+
+const Layout = lazy(() => import('./components/Layout'));
+const MainPage = lazy(() => import('./pages/MainPage'));
+const LoadingPage = lazy(() => import('./components/Layout/Spinner'));
+const IssuesListPage = lazy(() => import('./pages/IssueListPage'));
+const IssuesDetailPage = lazy(() => import('./pages/IssueDetailPage'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<Layout>
+				<Suspense fallback={<LoadingPage />}>
+					<Routes>
+						<Route path={ROUTES.MAIN}>
+							<Route index element={<MainPage />} />
+							<Route path={ROUTES.LIST} element={<IssuesListPage />} />
+							<Route path={ROUTES.DETAIL} element={<IssuesDetailPage />} />
+							<Route path={ROUTES.ERROR} element={<ErrorPage />} />
+							<Route path={ROUTES.NOTFOUND} element={<NotFoundPage />} />
+						</Route>
+					</Routes>
+				</Suspense>
+			</Layout>
+		</>
+	);
 }
 
 export default App;
