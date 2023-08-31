@@ -1,5 +1,5 @@
-import React from 'react';
+import IssueDetail from '../../components/IssueDetail/IssueDetail';
 
 export default function index() {
-	return <div>index</div>;
+	return <IssueDetail />;
 }
