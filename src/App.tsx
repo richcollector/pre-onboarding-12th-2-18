@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ROUTES } from './utils/constants/Routes';
-import './utils/styles/Common.scss';
+import './utils/styles/reset.scss';
 
 const Layout = lazy(() => import('./components/Layout'));
 const MainPage = lazy(() => import('./pages/MainPage'));
