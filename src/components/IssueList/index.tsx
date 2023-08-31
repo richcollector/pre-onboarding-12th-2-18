@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef, Fragment } from 'react';
 import { getIssueList } from '../../api/Api';
 import { IssueType } from '../../utils/types/Issue.interface';
-import Spinner from '../Layout/Spinner';
+import LoadingSpinner from '../common/LoadingSpinner';
 import IssueItem from '../IssueItem';
 import AdBanner from '../AdBanner';
 // import useIntersectionObserver from '../../utils/hooks/useIntersectionObserver';
@@ -45,7 +45,7 @@ function IssueList() {
 		};
 	}, [issues]);
 
-	if (isLoading) return <Spinner />;
+	if (isLoading) return <LoadingSpinner />;
 
 	return (
 		<>
@@ -58,7 +58,7 @@ function IssueList() {
 				))}
 			</ul>
 			<div ref={observerRef}>
-				<Spinner scroll />
+				<LoadingSpinner scroll />
 			</div>
 		</>
 	);

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './IssueItem.module.scss';
-import { getDate } from '../../utils/constants/getDate';
+import { getDate } from '../../utils/utilsFunction/getDate';
 import { IssueType } from '../../utils/types/Issue.interface';
 
 function IssueItem({ item }: { item: IssueType }) {

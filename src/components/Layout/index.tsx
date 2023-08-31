@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-import { INFO } from '../../utils/constants/Info';
+import { INFO } from '../../utils/constants/constants';
 import styles from './Layout.module.scss';
 
 function Layout() {
