@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from 'react-router-dom';
+
+import { ROUTES_PATH } from './utils/constants/constants';
+
+import Main from './pages/MainPage';
+import IssueList from './pages/IssueListPage';
+import IssueDetail from './pages/IssueDetailPage';
+import NotFound from './pages/NotFoundPage';
+import Layout from './components/Layout/Layout';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Routes>
+			<Route path={ROUTES_PATH.MAIN} element={<Main />} />
+			<Route element={<Layout />}>
+				<Route path={ROUTES_PATH.ISSUELIST} element={<IssueList />} />
+				<Route path={`${ROUTES_PATH.ISSUEDETAIL}/:id`} element={<IssueDetail />} />
+			</Route>
+			<Route path="*" element={<NotFound />} />
+		</Routes>
+	);
 }
 
 export default App;
