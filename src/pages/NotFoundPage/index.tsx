@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import styles from '../../utils/styles/NotFoundPage.module.scss';
+import styles from './NotFoundPage.module.scss';
 import { ROUTES } from '../../utils/constants/Routes';
 
 const NotFoundPage = () => {

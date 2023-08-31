@@ -1,4 +1,4 @@
-import styles from '../../utils/styles/AdBanner.module.scss';
+import styles from './AdBanner.module.scss';
 import AdImage from '../../assets/adimage.png';
 
 const AdBanner = () => {
