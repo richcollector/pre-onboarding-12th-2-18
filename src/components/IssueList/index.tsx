@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef, Fragment } from 'react';
 import { getIssueList } from '../../api/Api';
 import { IssueType } from '../../utils/types/Issue.interface';
-import Spinner from '../../components/Layout/Spinner';
-import IssueItem from '../../components/IssueItem/IssueItem';
-import AdBanner from '../../components/AdBanner';
+import Spinner from '../Layout/Spinner';
+import IssueItem from '../IssueItem';
+import AdBanner from '../AdBanner';
 // import useIntersectionObserver from '../../utils/hooks/useIntersectionObserver';
 
 function IssueList() {
