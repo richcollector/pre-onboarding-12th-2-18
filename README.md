@@ -19,7 +19,7 @@ $ npm start
 [배포 링크 - Issue-list](http://pre-onboarding-12th-2-18.s3-website.ap-northeast-2.amazonaws.com/)
 
 ### 동작 영상
-<img width='450px' src='https://github.com/richcollector/issues-list/assets/104312779/60e18cca-5a97-45a0-9659-ce1e822d47b2' alt='원티드-18팀-2차과제' />
+<img width='800px' src='https://github.com/richcollector/issues-list/assets/104312779/60e18cca-5a97-45a0-9659-ce1e822d47b2' alt='원티드-18팀-2차과제' />
 
 
 ## 🔥 과제 수행 방식
@@ -33,7 +33,7 @@ $ npm start
 - 최종 결과물 도출
 
 ## 🔧 기술 스택
-<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/amazons3-569A31?style=for-the-badge&logo=amazons3&logoColor=white"> <img src="https://img.shields.io/badge/scss-CC6699?style=for-the-badge&logo=scss&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white">
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/amazons3-569A31?style=for-the-badge&logo=amazons3&logoColor=white"> <img src="https://img.shields.io/badge/sass-CC6699?style=for-the-badge&logo=scss&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white">
 
 ## 🔨 협업 Tool
 
