@@ -1,4 +1,4 @@
-import IssueList from '../../components/IssueList/IssueLIst';
-export default function index() {
+import IssueList from '../../components/IssueList';
+export default function IssueListPage() {
 	return <IssueList />;
 }

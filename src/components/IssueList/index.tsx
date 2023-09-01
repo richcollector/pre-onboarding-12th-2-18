@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef, Fragment } from 'react';
 import { getIssueList } from '../../api/Api';
 import { IssueType } from '../../utils/types/Issue.interface';
-import Spinner from '../../components/Layout/Spinner';
-import IssueItem from '../../components/IssueItem/IssueItem';
-import AdBanner from '../../components/AdBanner';
+import LoadingSpinner from '../common/LoadingSpinner';
+import IssueItem from '../IssueItem';
+import AdBanner from '../AdBanner';
 // import useIntersectionObserver from '../../utils/hooks/useIntersectionObserver';
 
 function IssueList() {
@@ -45,7 +45,7 @@ function IssueList() {
 		};
 	}, [issues]);
 
-	if (isLoading) return <Spinner />;
+	if (isLoading) return <LoadingSpinner />;
 
 	return (
 		<>
@@ -58,7 +58,7 @@ function IssueList() {
 				))}
 			</ul>
 			<div ref={observerRef}>
-				<Spinner scroll />
+				<LoadingSpinner scroll />
 			</div>
 		</>
 	);

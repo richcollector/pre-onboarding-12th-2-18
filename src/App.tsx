@@ -1,11 +1,11 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { ROUTES } from './utils/constants/Routes';
+import { ROUTES } from './utils/constants/constants';
 import './utils/styles/reset.scss';
 
 const Layout = lazy(() => import('./components/Layout'));
 const MainPage = lazy(() => import('./pages/MainPage'));
-const LoadingPage = lazy(() => import('./components/Layout/Spinner'));
+const LoadingPage = lazy(() => import('./components/common/LoadingSpinner'));
 const IssuesListPage = lazy(() => import('./pages/IssueListPage'));
 const IssuesDetailPage = lazy(() => import('./pages/IssueDetailPage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage'));

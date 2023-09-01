@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import { getIssueDetail } from '../../api/Api';
 import { IssueType } from '../../utils/types/Issue.interface';
 import ReactMarkdown from 'react-markdown';
-import IssueItem from '../IssueItem/IssueItem';
+import IssueItem from '../IssueItem';
+import LoadingSpinner from '../common/LoadingSpinner';
+import styles from './IssueDetail.module.scss';
 
 function IssueDetail() {
 	const [detail, setDetail] = useState<IssueType>();
@@ -29,15 +31,19 @@ function IssueDetail() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [issue_number]);
 
-	if (isLoading) return <></>; //로딩spinner 추가
+	if (isLoading) return <LoadingSpinner />;
 
 	return (
 		<>
 			{detail && (
 				<>
-					<img src={detail.user?.avatar_url} alt="user-avatar-img" />
-					<IssueItem item={detail} key={detail.id} />
-					<ReactMarkdown>{detail.body}</ReactMarkdown>
+					<div className={styles['detail-info']}>
+						<img src={detail.user?.avatar_url} alt="user-avatar-img" />
+						<IssueItem item={detail} key={detail.id} />
+					</div>
+					<div className={styles['markdown-container']}>
+						<ReactMarkdown>{detail.body}</ReactMarkdown>
+					</div>
 				</>
 			)}
 		</>

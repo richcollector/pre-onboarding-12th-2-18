@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './IssueItem.module.scss';
-import { getDate } from '../../utils/constants/getDate';
+import { getDate } from '../../utils/utilsFunction/getDate';
 import { IssueType } from '../../utils/types/Issue.interface';
 
 function IssueItem({ item }: { item: IssueType }) {
 	const navigate = useNavigate();
 	const showIssueDetail = (issue_number: number) => {
-		navigate(`/issue/${issue_number}`);
+		navigate(`/issues/${issue_number}`);
 	};
 	return (
 		<>

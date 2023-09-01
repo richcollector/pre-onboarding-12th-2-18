@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-import { INFO } from '../../utils/constants/Info';
-import styles from '../../utils/styles/Layout.module.scss';
+import { INFO } from '../../utils/constants/constants';
+import styles from './Layout.module.scss';
 
 function Layout() {
 	const { OWNER, REPO } = INFO;
