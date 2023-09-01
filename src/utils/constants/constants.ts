@@ -1,7 +1,7 @@
 export const ROUTES = {
 	MAIN: '/',
-	LIST: 'issues',
-	DETAIL: 'issues/:issue_number',
+	LIST: '/issues',
+	DETAIL: '/issues/:issue_number',
 	ERROR: '/error',
 	NOTFOUND: '*',
 	WANTED: 'https://www.wanted.co.kr/',

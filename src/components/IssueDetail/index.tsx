@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getIssueDetail } from '../../api/Api';
 import { IssueType } from '../../utils/types/Issue.interface';
 import ReactMarkdown from 'react-markdown';
 import IssueItem from '../IssueItem';
 import LoadingSpinner from '../LoadingSpinner';
 import styles from './IssueDetail.module.scss';
+import { ROUTES } from '../../utils/constants/constants';
 
 function IssueDetail() {
 	const [detail, setDetail] = useState<IssueType>();
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const { issue_number } = useParams();
+	const navigate = useNavigate();
 
 	const getIssueData = async () => {
 		setIsLoading(true);
@@ -28,7 +30,6 @@ function IssueDetail() {
 		if (issue_number) {
 			getIssueData();
 		}
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [issue_number]);
 
 	if (isLoading) return <LoadingSpinner />;
@@ -37,11 +38,16 @@ function IssueDetail() {
 		<>
 			{detail && (
 				<>
-					<div className={styles.detailInfo}>
+					<div className={styles.move_list}>
+						<button className={styles.move_button} onClick={() => navigate(ROUTES.LIST)}>
+							리스트로 돌아가기
+						</button>
+					</div>
+					<div className={styles.detail_info}>
 						<img src={detail.user?.avatar_url} alt="user-avatar-img" />
 						<IssueItem item={detail} key={detail.id} />
 					</div>
-					<div className={styles.markdownContainer}>
+					<div className={styles.markdown_container}>
 						<ReactMarkdown>{detail.body}</ReactMarkdown>
 					</div>
 				</>
