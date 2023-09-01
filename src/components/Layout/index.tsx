@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom';
 
-import { INFO } from '../../utils/constants/constants';
+import { URL_INFO } from '../../utils/constants/constants';
 import styles from './Layout.module.scss';
 
 function Layout() {
-	const { OWNER, REPO } = INFO;
+	const { OWNER, REPO } = URL_INFO;
 
 	return (
 		<div className={styles.header}>

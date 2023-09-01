@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { URL_INFO } from '../utils/constants/constants';
 
 const instance = axios.create({
-	baseURL: `https://api.github.com/repos/facebook/react`,
+	baseURL: `https://api.github.com/repos/${URL_INFO.OWNER}/${URL_INFO.REPO}`,
 });
 
 export const getIssueDetail = async (issue_number: number) => {
