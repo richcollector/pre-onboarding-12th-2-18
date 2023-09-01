@@ -37,11 +37,11 @@ function IssueDetail() {
 		<>
 			{detail && (
 				<>
-					<div className={styles['detail-info']}>
+					<div className={styles.detailInfo}>
 						<img src={detail.user?.avatar_url} alt="user-avatar-img" />
 						<IssueItem item={detail} key={detail.id} />
 					</div>
-					<div className={styles['markdown-container']}>
+					<div className={styles.markdownContainer}>
 						<ReactMarkdown>{detail.body}</ReactMarkdown>
 					</div>
 				</>
