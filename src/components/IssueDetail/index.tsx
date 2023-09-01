@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 import IssueItem from '../IssueItem';
 import LoadingSpinner from '../LoadingSpinner';
 import styles from './IssueDetail.module.scss';
+import { ROUTES } from '../../utils/constants/constants';
 
 function IssueDetail() {
 	const [detail, setDetail] = useState<IssueType>();
@@ -40,6 +41,11 @@ function IssueDetail() {
 		<>
 			{detail && (
 				<>
+					<div className={styles.moveList}>
+						<button className={styles.moveButton} onClick={() => navigate(ROUTES.LIST)}>
+							리스트로 돌아가기
+						</button>
+					</div>
 					<div className={styles.detailInfo}>
 						<img src={detail.user?.avatar_url} alt="user-avatar-img" />
 						<IssueItem item={detail} key={detail.id} />

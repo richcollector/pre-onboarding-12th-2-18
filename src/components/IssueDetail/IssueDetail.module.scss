@@ -1,3 +1,17 @@
+.moveList {
+	width: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: 0 auto;
+	margin-bottom: 10px;
+
+	.moveButton {
+		font-size: 20px;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+}
 .detailInfo {
 	display: flex;
 	align-items: center;
