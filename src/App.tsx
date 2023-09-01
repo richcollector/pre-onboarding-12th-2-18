@@ -21,8 +21,8 @@ function App() {
 						<Route element={<Layout />}>
 							<Route path={ROUTES.LIST} element={<IssuesListPage />} />
 							<Route path={ROUTES.DETAIL} element={<IssuesDetailPage />} />
-							<Route path={ROUTES.ERROR} element={<ErrorPage />} />
 						</Route>
+						<Route path={`${ROUTES.ERROR}/:status`} element={<ErrorPage />} />
 						<Route path={ROUTES.NOTFOUND} element={<NotFoundPage />} />
 					</Route>
 				</Routes>

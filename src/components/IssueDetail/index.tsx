@@ -19,8 +19,10 @@ function IssueDetail() {
 		try {
 			const res = await getIssueDetail(Number(issue_number));
 			setDetail(res.data);
-		} catch (err) {
-			console.error(err);
+		} catch (error: any) {
+			if (error.response && error.response.status) {
+				navigate(`/error/${error.response.status}`);
+			}
 		} finally {
 			setIsLoading(false);
 		}
@@ -38,16 +40,16 @@ function IssueDetail() {
 		<>
 			{detail && (
 				<>
-					<div className={styles.move_list}>
-						<button className={styles.move_button} onClick={() => navigate(ROUTES.LIST)}>
+					<div className={styles.moveList}>
+						<button className={styles.moveButton} onClick={() => navigate(ROUTES.LIST)}>
 							리스트로 돌아가기
 						</button>
 					</div>
-					<div className={styles.detail_info}>
+					<div className={styles.detailInfo}>
 						<img src={detail.user?.avatar_url} alt="user-avatar-img" />
 						<IssueItem item={detail} key={detail.id} />
 					</div>
-					<div className={styles.markdown_container}>
+					<div className={styles.markdownContainer}>
 						<ReactMarkdown>{detail.body}</ReactMarkdown>
 					</div>
 				</>
