@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './IssueItem.module.scss';
-import { getDate } from '../../utils/utilsFunction/getDate';
+import { getDate } from '../../utils/functions/getDate';
 import { IssueType } from '../../utils/types/Issue.interface';
 
 function IssueItem({ item }: { item: IssueType }) {
 	const navigate = useNavigate();
 	const showIssueDetail = (issue_number: number) => {
-		navigate(`${issue_number}`);
+		navigate(`/issues/${issue_number}`);
 	};
 	return (
 		<>
@@ -19,13 +19,13 @@ function IssueItem({ item }: { item: IssueType }) {
 			>
 				<div className={styles.info}>
 					<h2>
-						<span className={styles.issue_number}>#{item.number}</span> {item.title}
+						<span className={styles.issueNumber}>#{item.number}</span> {item.title}
 					</h2>
-					<span className={styles.sub_info}>
+					<span className={styles.subInfo}>
 						작성자: {item.user.login}, 작성일: {getDate(item.created_at)}
 					</span>
 				</div>
-				<span className={styles.sub_info}>댓글수: {item.comments}</span>
+				<span className={styles.subInfo}>댓글수: {item.comments}</span>
 			</li>
 		</>
 	);

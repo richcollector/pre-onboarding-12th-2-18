@@ -1,4 +1,4 @@
-import styles from '../../utils/styles/LoadingSpinner.module.scss';
+import styles from './LoadingSpinner.module.scss';
 
 function LoadingSpinner({ scroll }: { scroll?: boolean }) {
 	return (

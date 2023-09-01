@@ -5,7 +5,7 @@ import './utils/styles/reset.scss';
 
 const Layout = lazy(() => import('./components/Layout'));
 const MainPage = lazy(() => import('./pages/MainPage'));
-const LoadingPage = lazy(() => import('./components/common/LoadingSpinner'));
+const LoadingPage = lazy(() => import('./components/LoadingSpinner'));
 const IssuesListPage = lazy(() => import('./pages/IssueListPage'));
 const IssuesDetailPage = lazy(() => import('./pages/IssueDetailPage'));
 const ErrorPage = lazy(() => import('./pages/ErrorPage'));
