@@ -1,4 +1,18 @@
-.detail-info {
+.move_list {
+	width: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin: 0 auto;
+	margin-bottom: 10px;
+
+	.move_button {
+		font-size: 20px;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+}
+.detail_info {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -15,7 +29,7 @@
 		cursor: auto;
 	}
 }
-.markdown-container {
+.markdown_container {
 	border: 1px solid #b0b0b0ee;
 	border-radius: 2rem;
 	width: 60%;

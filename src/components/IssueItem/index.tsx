@@ -6,7 +6,7 @@ import { IssueType } from '../../utils/types/Issue.interface';
 function IssueItem({ item }: { item: IssueType }) {
 	const navigate = useNavigate();
 	const showIssueDetail = (issue_number: number) => {
-		navigate(`/issues/${issue_number}`);
+		navigate(`${issue_number}`);
 	};
 	return (
 		<>
@@ -19,13 +19,13 @@ function IssueItem({ item }: { item: IssueType }) {
 			>
 				<div className={styles.info}>
 					<h2>
-						<span className={styles['issue-number']}>#{item.number}</span> {item.title}
+						<span className={styles.issue_number}>#{item.number}</span> {item.title}
 					</h2>
-					<span className={styles['sub-info']}>
+					<span className={styles.sub_info}>
 						작성자: {item.user.login}, 작성일: {getDate(item.created_at)}
 					</span>
 				</div>
-				<span className={styles['sub-info']}>댓글수: {item.comments}</span>
+				<span className={styles.sub_info}>댓글수: {item.comments}</span>
 			</li>
 		</>
 	);
