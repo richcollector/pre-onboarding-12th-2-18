@@ -6,12 +6,14 @@ import LoadingSpinner from '../LoadingSpinner';
 import IssueItem from '../IssueItem';
 import AdBanner from '../AdBanner';
 import useIntersectionObserver from '../../utils/hooks/useIntersectionObserver';
+import { useNavigate } from 'react-router-dom';
 
 function IssueList() {
 	const [issues, setIssues] = useState<IssueType[]>([]);
 	const [currentPage, setCurrentPage] = useState<number>(1);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const observerRef = useRef<any>(null);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		getIssueList(currentPage)
@@ -20,7 +22,9 @@ function IssueList() {
 				setIsLoading(false);
 			})
 			.catch(error => {
-				console.error(error);
+				if (error.response && error.response.status) {
+					navigate(`/error/${error.response.status}`);
+				}
 			});
 	}, [currentPage]);
 

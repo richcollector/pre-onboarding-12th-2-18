@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getIssueDetail } from '../../api/Api';
 import { IssueType } from '../../utils/types/Issue.interface';
 import ReactMarkdown from 'react-markdown';
@@ -11,14 +11,17 @@ function IssueDetail() {
 	const [detail, setDetail] = useState<IssueType>();
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const { issue_number } = useParams();
+	const navigate = useNavigate();
 
 	const getIssueData = async () => {
 		setIsLoading(true);
 		try {
 			const res = await getIssueDetail(Number(issue_number));
 			setDetail(res.data);
-		} catch (err) {
-			console.error(err);
+		} catch (error: any) {
+			if (error.response && error.response.status) {
+				navigate(`/error/${error.response.status}`);
+			}
 		} finally {
 			setIsLoading(false);
 		}
