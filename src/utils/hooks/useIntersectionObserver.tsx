@@ -1,10 +1,15 @@
 import { useEffect, RefObject } from 'react';
+import { IssueType } from '../types/Issue.interface';
 
-const useIntersectionObserver = (targetRef: RefObject<Element>, callback: () => void) => {
+const useIntersectionObserver = (
+	targetRef: RefObject<Element>,
+	callback: () => void,
+	lists: IssueType[],
+) => {
 	useEffect(() => {
 		const lastElement = targetRef.current;
-		const observer = new IntersectionObserver(([entry]) => {
-			const isIntersecting = entry.isIntersecting;
+		const observer = new IntersectionObserver(entries => {
+			const isIntersecting = entries[0].isIntersecting;
 			if (isIntersecting) {
 				callback();
 			}
@@ -15,11 +20,9 @@ const useIntersectionObserver = (targetRef: RefObject<Element>, callback: () => 
 		}
 
 		return () => {
-			if (lastElement) {
-				observer.unobserve(lastElement);
-			}
+			observer.disconnect();
 		};
-	}, [targetRef, callback]);
+	}, [lists]);
 };
 
 export default useIntersectionObserver;

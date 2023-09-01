@@ -32,24 +32,6 @@ function IssueList() {
 		issues,
 	);
 
-	// useEffect(() => {
-	// 	const observer = new IntersectionObserver(
-	// 		entries => {
-	// 			if (entries[0].isIntersecting) {
-	// 				setCurrentPage(prev => prev + 1);
-	// 			}
-	// 		},
-	// 		{ threshold: 1 },
-	// 	);
-	// 	if (observerRef.current) {
-	// 		observer.observe(observerRef.current);
-	// 	}
-
-	// 	return () => {
-	// 		observer.disconnect();
-	// 	};
-	// }, [issues]);
-
 	if (isLoading) return <LoadingSpinner />;
 
 	return (
