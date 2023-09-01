@@ -1,10 +1,11 @@
+import React from 'react';
 import { useEffect, useState, useRef, Fragment } from 'react';
 import { getIssueList } from '../../api/Api';
 import { IssueType } from '../../utils/types/Issue.interface';
-import LoadingSpinner from '../common/LoadingSpinner';
+import LoadingSpinner from '../LoadingSpinner';
 import IssueItem from '../IssueItem';
 import AdBanner from '../AdBanner';
-// import useIntersectionObserver from '../../utils/hooks/useIntersectionObserver';
+import useIntersectionObserver from '../../utils/hooks/useIntersectionObserver';
 
 function IssueList() {
 	const [issues, setIssues] = useState<IssueType[]>([]);
@@ -23,27 +24,31 @@ function IssueList() {
 			});
 	}, [currentPage]);
 
-	// useIntersectionObserver(observerRef, () => {
-	// 	setCurrentPage(currentPage + 1);
-	// });
+	useIntersectionObserver(
+		observerRef,
+		() => {
+			setCurrentPage(currentPage + 1);
+		},
+		issues,
+	);
 
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			entries => {
-				if (entries[0].isIntersecting) {
-					setCurrentPage(prev => prev + 1);
-				}
-			},
-			{ threshold: 1 },
-		);
-		if (observerRef.current) {
-			observer.observe(observerRef.current);
-		}
+	// useEffect(() => {
+	// 	const observer = new IntersectionObserver(
+	// 		entries => {
+	// 			if (entries[0].isIntersecting) {
+	// 				setCurrentPage(prev => prev + 1);
+	// 			}
+	// 		},
+	// 		{ threshold: 1 },
+	// 	);
+	// 	if (observerRef.current) {
+	// 		observer.observe(observerRef.current);
+	// 	}
 
-		return () => {
-			observer.disconnect();
-		};
-	}, [issues]);
+	// 	return () => {
+	// 		observer.disconnect();
+	// 	};
+	// }, [issues]);
 
 	if (isLoading) return <LoadingSpinner />;
 

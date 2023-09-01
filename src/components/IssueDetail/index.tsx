@@ -4,7 +4,7 @@ import { getIssueDetail } from '../../api/Api';
 import { IssueType } from '../../utils/types/Issue.interface';
 import ReactMarkdown from 'react-markdown';
 import IssueItem from '../IssueItem';
-import LoadingSpinner from '../common/LoadingSpinner';
+import LoadingSpinner from '../LoadingSpinner';
 import styles from './IssueDetail.module.scss';
 
 function IssueDetail() {
