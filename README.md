@@ -18,10 +18,6 @@ $ npm start
 
 [배포 링크 - Issue-list](http://pre-onboarding-12th-2-18.s3-website.ap-northeast-2.amazonaws.com/)
 
-### 동작 영상
-<img width='800px' src='https://github.com/richcollector/issues-list/assets/104312779/60e18cca-5a97-45a0-9659-ce1e822d47b2' alt='원티드-18팀-2차과제' />
-
-
 ## 🔥 과제 수행 방식
 
 - 협업 Tool 선정
